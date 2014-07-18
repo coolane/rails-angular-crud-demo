@@ -21,7 +21,7 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
-development:
+development: &development
   <<: *default
   database: rails-angular-crud-demo_development
 
@@ -29,10 +29,10 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: rails-angular-crud-demo
+  username: rails-angular-crud-demo
 
   # The password associated with the postgres role (username).
-  #password:
+  password: local-pass
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -55,8 +55,8 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
+test: &test
+  <<: *development
   database: rails-angular-crud-demo_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
