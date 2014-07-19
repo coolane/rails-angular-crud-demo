@@ -4,8 +4,13 @@
 
 #= require_tree ./pages
 
-@raCrudDemo.config(['$routeProvider', ($routeProvider) ->
+@raCrudDemo.config(
+  ['$routeProvider', ($routeProvider) ->
     $routeProvider
+      .when('/show/:item_id', {
+        templateUrl: '/assets/show.html',
+        controller: 'ItemViewCtrl'
+      })
       .otherwise({
         templateUrl: '/assets/home.html',
         controller: 'HomeCtrl'
