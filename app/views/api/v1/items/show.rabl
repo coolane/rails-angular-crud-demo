@@ -2,4 +2,4 @@
 object :@item
 # Output the attributes of the object
 attributes :id, :label, :color
-attribute to_s: :price
+node(:price) { |item| number_to_currency(item.price) }
