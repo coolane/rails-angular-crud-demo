@@ -1,0 +1,9 @@
+<div class="col-md-6 col-md-offset-3" ng-class="{{item.color + '-back'}}">
+  <section class="item-view" ng-if="item">
+    <h1>Label: {{item.label}}</h1>
+    <p><strong>Price:</strong> {{item.price}}
+  </section>
+  <section class="item-view-error" ng-if="!item">
+    Invalid id provided, item not found.
+  </section>
+</div>
